@@ -5,13 +5,22 @@ import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.LinkedBlockingQueue;
 
+/**
+ * èŠå¤©
+ * @author Administrator
+ *
+ */
 public class ChatService {
 
-	//ËùÓĞÏûÏ¢µÄ¶ÓÁĞ
 	public static BlockingQueue<String> messageQueue = new LinkedBlockingQueue<>();
 	
 	public static boolean shutDown;
 	
+	/**
+	 * å‘é€èŠå¤©ä¿¡æ¯
+	 * @param messageCache
+	 * @param message
+	 */
 	public static void sendMessage(MessageCache messageCache,String message){
 		messageCache.offer(message);
 	}

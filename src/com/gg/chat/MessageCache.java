@@ -4,14 +4,14 @@ import java.util.concurrent.BlockingQueue;
 import java.util.concurrent.LinkedBlockingQueue;
 
 /**
- * 消息缓存区
+ * 娑堟伅缂撳瓨
  * @author Administrator
  *
  */
 public class MessageCache implements Runnable{
 
 	private int maxCapacity = 100000;
-	//消息缓冲区
+	//娑堟伅闃熷垪
 	private BlockingQueue<String> queue = new LinkedBlockingQueue<String>(maxCapacity);
 	
 	@Override
@@ -29,11 +29,10 @@ public class MessageCache implements Runnable{
 	public boolean offer(String data) {
 		if (queue.size() >= maxCapacity - 1) {
 			if (queue.size() >= maxCapacity - 1) {
-				System.err.println("消息队列已满");
+				System.err.println("锟斤拷息锟斤拷锟斤拷锟斤拷锟斤拷");
 				queue.clear();
 			}
 		}
-		// 不成功则丢弃消息，不等待
 		boolean isSuccess = queue.offer(data);
 		if (!isSuccess) {
 		}
